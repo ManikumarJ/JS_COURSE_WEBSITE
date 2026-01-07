@@ -1,0 +1,153 @@
+// Ensure PAGES_DATA exists
+if (typeof PAGES_DATA === 'undefined') {
+    window.PAGES_DATA = {};
+}
+
+PAGES_DATA['interview.html'] = `<h1>JavaScript Interview Questions</h1>
+<p>Master these common interview questions to ace your next JavaScript interview.</p>
+
+<div class="quiz-item">
+    <h3>1. Why let and const were introduced when var already existed?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><code>var</code> has <strong>function scope</strong> and can be redeclared, which often led to bugs and variable hoisting issues. <code>let</code> and <code>const</code> (introduced in ES6) have <strong>block scope</strong>, meaning they only exist within the <code>{ }</code> they are defined in. This prevents variable leakage and makes code safer. <code>const</code> also prevents reassignment, ensuring values remain constant.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>2. How does JavaScript decide the data type of a variable at runtime?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>JavaScript is <strong>dynamically typed</strong>. The engine determines the type based on the value assigned to the variable at runtime. It uses a tag (conceptually) to identify if a value is a Number, String, Object, etc. You can check this using the <code>typeof</code> operator.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>3. What is the difference between == and ===?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><code>==</code> (Loose Equality) performs <strong>type coercion</strong> before comparing (e.g., <code>"5" == 5</code> is true).<br>
+        <code>===</code> (Strict Equality) checks both <strong>value and data type</strong> (e.g., <code>"5" === 5</code> is false).<br>
+        Companies prefer <code>===</code> because it avoids unexpected bugs caused by automatic type conversion.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>4. How do logical operators (&&, ||) help in cleaner code?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>They allow <strong>short-circuit evaluation</strong>.<br>
+        <code>&&</code> (AND) can replace nested <code>if</code> statements (e.g., <code>user && user.logIn()</code>).<br>
+        <code>||</code> (OR) is often used for default values (e.g., <code>let name = inputName || "Guest"</code>).</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>5. When would you choose switch over if-else?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>Use <code>switch</code> when comparing a single variable against <strong>multiple fixed values</strong> (e.g., status codes, days of the week). It is cleaner and potentially faster than many <code>else if</code> blocks. Use <code>if-else</code> for complex conditions (ranges, boolean logic).</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>6. Why does do-while loop execute at least once?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>In a <code>do-while</code> loop, the code block is executed <strong>before</strong> the condition is checked. Therefore, even if the condition is initially false, the block runs once.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>7. What happens internally when a for loop runs?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>1. <strong>Initialization</strong> runs once.<br>
+        2. <strong>Condition</strong> is checked. If true, the loop body runs.<br>
+        3. <strong>Increment/Decrement</strong> executes.<br>
+        4. The process repeats until the condition is false.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>8. How does array indexing work?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>Arrays are zero-indexed objects stored in contiguous memory (optimized by engines). Accessing <code>arr[0]</code> retrieves the first element. Accessing a non-existent index returns <code>undefined</code> without throwing an error.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>9. map() vs forEach()</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><code>map()</code> <strong>returns a new array</strong> with transformed elements. Use it when you want to modify data.<br>
+        <code>forEach()</code> returns <code>undefined</code> and is used for side-effects (like logging or updating DOM) without creating a new array.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>10. Why are higher-order array methods preferred?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>Methods like <code>map</code>, <code>filter</code>, and <code>reduce</code> are declarative (express <em>what</em> to do, not <em>how</em>). They reduce boilerplate, manage scope better, and are often easier to read and chain than traditional <code>for</code> loops.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>11. Object vs Primitive Memory Storage</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><strong>Primitives</strong> (string, number, boolean) are stored by <strong>value</strong> in the Stack.<br>
+        <strong>Objects</strong> (arrays, functions) are stored by <strong>reference</strong> in the Heap. A variable holds a pointer to the heap location, not the actual object.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>12. for...in vs Object.keys()</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><code>for...in</code> iterates over all enumerable properties, including those in the <strong>prototype chain</strong> (unless filtered).<br>
+        <code>Object.keys()</code> returns an array of the object's <strong>own</strong> enumerable properties only, which is usually safer and preferred.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>13. Parameters vs Arguments</h3>
+    <details>
+        <summary>Answer</summary>
+        <p><strong>Parameters</strong> are the variables listed in the function definition.<br>
+        <strong>Arguments</strong> are the actual values passed to the function when called.<br>
+        Callbacks are functions passed as <em>arguments</em> to other functions to be executed later (e.g., in asynchronous operations).</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>14. Why Asynchronous JS doesn't block main thread?</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>JavaScript uses an <strong>Event Loop</strong>. Heavy tasks (like fetching data) are offloaded to Web APIs (browser). The main thread continues executing code. When the async task finishes, its callback is pushed to the queue and executed when the stack is empty, keeping the UI responsive.</p>
+    </details>
+</div>
+<hr>
+
+<div class="quiz-item">
+    <h3>15. Role of V8 Engine</h3>
+    <details>
+        <summary>Answer</summary>
+        <p>V8 is Google's open-source JavaScript engine (written in C++). It parses JS code, compiles it to machine code using JIT (Just-In-Time) compilation, and executes it. It powers Chrome and Node.js. For React, V8 executes the component logic and updates the Virtual DOM efficiently.</p>
+    </details>
+</div>`;

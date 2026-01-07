@@ -1,0 +1,45 @@
+<h1>JavaScript ES6+ Features</h1>
+<p>ES6 (ECMAScript 2015) brought major changes to JavaScript.</p>
+
+<h2>Template Literals</h2>
+<p>Template literals use back-ticks (``) rather than quotes ("") to define strings.</p>
+<p>They allow variables in strings:</p>
+
+<div class="code-example">
+    <pre>let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+console.log(text);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Destructuring Assignment</h2>
+<p>Destructuring makes it easy to assign array values and object properties to distinct variables.</p>
+
+<div class="code-example">
+    <pre>const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50
+};
+
+// Destructuring
+let {firstName, lastName} = person;
+
+console.log(firstName + " " + lastName);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Spread Operator (...)</h2>
+<p>The <code>...</code> operator expands an iterable (like an array) into more elements.</p>
+
+<div class="code-example">
+    <pre>const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const combined = [...arr1, ...arr2];
+console.log(combined);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>

@@ -1,0 +1,49 @@
+<h1>JavaScript Variables</h1>
+<p>Variables are containers for storing data.</p>
+<p>In JavaScript, there are 3 ways to declare a variable:</p>
+<ul>
+    <li><code>var</code></li>
+    <li><code>let</code></li>
+    <li><code>const</code></li>
+</ul>
+
+<h2>1. The var keyword</h2>
+<p>The <code>var</code> keyword was used in all JavaScript code from 1995 to 2015.</p>
+<p>Variables declared with <code>var</code> have <strong>function scope</strong>.</p>
+
+<div class="code-example">
+    <pre>var x = 5;
+var y = 6;
+var z = x + y;
+console.log(z);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>2. The let keyword</h2>
+<p>The <code>let</code> keyword was introduced in ES6 (2015).</p>
+<p>Variables declared with <code>let</code> have <strong>block scope</strong>.</p>
+<p>They cannot be redeclared in the same scope.</p>
+
+<div class="code-example">
+    <pre>let x = "Hello";
+// let x = "World"; // This will cause an error
+x = "World"; // This is allowed (reassignment)
+console.log(x);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>3. The const keyword</h2>
+<p>The <code>const</code> keyword was also introduced in ES6.</p>
+<p>Variables defined with <code>const</code> cannot be redeclared and cannot be reassigned.</p>
+
+<div class="code-example">
+    <pre>const PI = 3.14159;
+// PI = 3.14; // This will cause an error
+console.log(PI);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<div class="note">
+    <strong>Tip:</strong> Always use <code>const</code> if the value should not change. Use <code>let</code> if you
+    can't use <code>const</code>. Only use <code>var</code> if you MUST support very old browsers.
+</div>

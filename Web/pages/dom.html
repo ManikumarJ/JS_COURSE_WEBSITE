@@ -1,0 +1,48 @@
+<h1>JavaScript DOM</h1>
+<p>The HTML DOM (Document Object Model) is a standard for how to get, change, add, or delete HTML elements.</p>
+
+<h2>What is the DOM?</h2>
+<p>The DOM is a W3C (World Wide Web Consortium) standard.</p>
+<p>The DOM defines a standard for accessing documents: "The W3C Document Object Model (DOM) is a platform and
+    language-neutral interface that allows programs and scripts to dynamically access and update the content, structure,
+    and style of a document."</p>
+
+<h2>Selecting Elements</h2>
+<p>Finding HTML elements by Id:</p>
+<div class="code-example">
+    <pre>const element = document.getElementById("intro");
+console.log(element.innerHTML);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<p>Finding HTML elements by Class Name:</p>
+<pre>const elements = document.getElementsByClassName("intro");
+</pre>
+
+<h2>Changing HTML Content</h2>
+<p>The easiest way to modify the content of an HTML element is by using the <code>innerHTML</code> property.</p>
+
+<div class="code-example">
+    <div class="code-header">Example</div>
+    <pre>document.getElementById("p1").innerHTML = "New text!";</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Changing HTML Styles</h2>
+<p>To change the style of an HTML element, use this syntax:</p>
+<div class="code-example">
+    <pre>document.getElementById("p2").style.color = "blue";
+document.getElementById("p2").style.fontSize = "20px";</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Events</h2>
+<p>The DOM allows JavaScript to react to HTML events.</p>
+
+<div class="code-example">
+    <pre>const btn = document.getElementById("myBtn");
+btn.addEventListener("click", function() {
+  alert("Hello World!");
+});</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>

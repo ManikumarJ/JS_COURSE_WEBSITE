@@ -1,0 +1,56 @@
+<h1>JavaScript Examples</h1>
+<p>Learn by examples! Use the "Try it Yourself" button to see how it works.</p>
+
+<h2>1. Clock</h2>
+<p>A simple digital clock using <code>setInterval</code>.</p>
+<div class="code-example">
+    <pre>function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+// Add this to HTML to trigger it:
+// <body onload="startTime()">
+// <div id="txt"></div></pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>2. Toggle Password Visibility</h2>
+<div class="code-example">
+    <pre>function myList() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+// HTML:
+// <input type="password" value="FakePSW" id="myInput">
+// <input type="checkbox" onclick="myList()">Show Password</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>3. Calculate Average</h2>
+<p>Calculate the average of numbers in an array.</p>
+<div class="code-example">
+    <pre>const numbers = [75, 88, 93, 45, 67];
+let sum = 0;
+for(let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+const avg = sum / numbers.length;
+console.log("Average: " + avg);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>

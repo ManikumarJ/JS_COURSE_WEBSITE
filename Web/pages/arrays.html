@@ -1,0 +1,41 @@
+<h1>JavaScript Arrays</h1>
+<p>An array is a special variable, which can hold more than one value.</p>
+
+<div class="code-example">
+    <pre>const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars[0]); // Saab</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Creating an Array</h2>
+<p>Using an array literal is the easiest way to create a JavaScript Array.</p>
+<pre>const array_name = [item1, item2, ...];</pre>
+
+<h2>Array Methods</h2>
+<p>The strength of JavaScript arrays lies in the array methods.</p>
+
+<h3>push() and pop()</h3>
+<p><code>push()</code> adds a new element to an array (at the end).</p>
+<p><code>pop()</code> removes the last element from an array.</p>
+
+<div class="code-example">
+    <pre>const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  // Adds "Lemon"
+console.log(fruits);
+
+fruits.pop(); // Removes "Lemon"
+console.log(fruits);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h3>Array Iteration (Looping)</h3>
+<p>You can use <code>forEach()</code> to call a function once for each array element.</p>
+<div class="code-example">
+    <pre>const numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value) {
+  console.log(value);
+}</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>

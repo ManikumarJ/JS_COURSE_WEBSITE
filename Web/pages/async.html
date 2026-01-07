@@ -1,0 +1,47 @@
+<h1>Asynchronous JavaScript</h1>
+<p>Functions running in parallel with other functions are called asynchronous.</p>
+
+<h2>Callbacks</h2>
+<p>A callback is a function passed as an argument to another function.</p>
+
+<h2>JavaScript Promises</h2>
+<p>A Promise is a JavaScript object that links producing code and consuming code.</p>
+
+<div class="code-example">
+    <pre>let myPromise = new Promise(function(myResolve, myReject) {
+  // "Producing Code" (May take some time)
+  let x = 0;
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) { console.log(value); },
+  function(error) { console.log(error); }
+);</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Async / Await</h2>
+<p><code>async</code> and <code>await</code> make promises easier to write.</p>
+<p><code>async</code> makes a function return a Promise.</p>
+<p><code>await</code> makes a function wait for a Promise.</p>
+
+<div class="code-example">
+    <pre>async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve("I love JS !!");}, 3000);
+  });
+  
+  // Wait for promise to fulfill
+  let result = await myPromise;
+  console.log(result);
+}
+
+myDisplay();</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>

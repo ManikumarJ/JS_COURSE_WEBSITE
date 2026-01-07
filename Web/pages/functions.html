@@ -1,0 +1,50 @@
+<h1>JavaScript Functions</h1>
+<p>A JavaScript function is a block of code designed to perform a particular task.</p>
+<p>A JavaScript function is executed when "something" invokes it (calls it).</p>
+
+<h2>Function Declaration</h2>
+<p>A function declaration consists of the <code>function</code> keyword, followed by:
+<ul>
+    <li>The name of the function.</li>
+    <li>A list of parameters to the function, enclosed in parentheses and separated by commas.</li>
+    <li>The JavaScript statements that define the function, enclosed in curly brackets, {...}.</li>
+</ul>
+</p>
+
+<div class="code-example">
+    <pre>function myFunction(p1, p2) {
+  return p1 * p2;
+}
+
+let result = myFunction(4, 3);
+console.log(result); // 12</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Function Expression</h2>
+<p>A JavaScript function can also be defined using an expression.</p>
+<div class="code-example">
+    <pre>const x = function (a, b) {return a * b};
+console.log(x(3, 4));</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Arrow Functions</h2>
+<p>Arrow functions were introduced in ES6.</p>
+<p>Arrow functions allow us to write shorter function syntax.</p>
+
+<div class="code-example">
+    <pre>const hello = () => {
+  return "Hello World!";
+}
+
+// Shorter Syntax (Implicit Return)
+const helloShort = () => "Hello World!";
+
+console.log(helloShort());</pre>
+    <button class="try-btn">Try it Yourself</button>
+</div>
+
+<h2>Variable Scope</h2>
+<p>Variables declared locally (inside a function) have <strong>Function Scope</strong>.</p>
+<p>Variables declared globally (outside any function) have <strong>Global Scope</strong>.</p>

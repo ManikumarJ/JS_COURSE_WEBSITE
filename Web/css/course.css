@@ -1,0 +1,329 @@
+:root {
+    --primary-color: #1a73e8;
+    /* Trust/Tech Blue */
+    --primary-hover: #1557b0;
+    --bg-color: #f1f1f1;
+    --sidebar-bg: #fdfdfd;
+    --text-color: #333;
+    --code-bg: #1e1e1e;
+    --code-text: #d4d4d4;
+    --border-color: #e7e7e7;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--primary-color);
+}
+
+.header-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.toggle-btn,
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.toggle-btn {
+    display: none;
+    /* Mobile only */
+}
+
+/* Main Layout */
+.container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-section {
+    padding: 10px 0;
+}
+
+.sidebar-title {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.sidebar-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Content Area */
+#content {
+    flex: 1;
+    padding: 30px 40px;
+    max-width: 1000px;
+    /* Readability limit */
+    margin: 0 auto;
+    /* Center content if screen is huge */
+    width: 100%;
+    min-height: 80vh;
+}
+
+/* Content Typography */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* Code Block */
+.code-example {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.code-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+pre {
+    background-color: white;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    padding-right: 50px;
+    /* Space for copy btn */
+    overflow-x: auto;
+    margin: 0;
+    font-size: 15px;
+    color: #000;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #555;
+}
+
+.copy-btn:hover {
+    background: #ddd;
+    color: #000;
+}
+
+.try-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.try-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Note Box */
+.note {
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+/* Navigation Buttons (Prev/Next) */
+.content-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.nav-btn.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        left: -250px;
+        z-index: 1000;
+        height: 100%;
+        top: 0;
+        border: none;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #sidebar.show {
+        transform: translateX(250px);
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+
+    #content {
+        padding: 20px;
+    }
+}
+
+/* Search Bar */
+.search-container {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Overlay for mobile sidebar */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* Utility to hide sidebar (e.g. for Interview page) */
+body.hide-sidebar #sidebar {
+    display: none !important;
+}
+
+body.hide-sidebar #content {
+    max-width: 1200px;
+}
+
+body.hide-sidebar .toggle-btn {
+    display: none !important;
+}
