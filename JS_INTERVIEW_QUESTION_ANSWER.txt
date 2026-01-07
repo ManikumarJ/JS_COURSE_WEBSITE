@@ -1,0 +1,44 @@
+Why were let and const introduced when var already existed?
+let and const were introduced to avoid problems with var and to make variables safer and easier to control.
+
+How does JavaScript decide the data type of a variable at runtime?
+JavaScript decides the data type based on the value stored in the variable while the program is running.
+
+What is the difference between == and ===, and why do companies prefer ===?
+== checks only the value, but === checks both value and type, so companies prefer === to avoid mistakes.
+
+How do logical operators (&&, ||) help in writing cleaner conditional code?
+Logical operators reduce the need for long if statements and make conditions shorter and cleaner.
+
+When would you choose switch over if-else in real applications?
+switch is used when one value needs to be checked against many fixed options.
+
+Why does the do-while loop execute at least once even if the condition is false?
+The do-while loop runs once because the condition is checked only after the code runs.
+
+What happens internally when a for loop runs in JavaScript?
+A for loop starts a variable, checks the condition, runs the code, updates the variable, and repeats this until the condition is false.
+
+How does array indexing work, and what happens if you access an index that does not exist?
+Arrays use numbers starting from zero, and accessing a missing index gives undefined.
+
+What is the difference between map() and forEach() in terms of return value and use case?
+map() creates a new array, while forEach() is used to perform actions and does not return anything.
+
+Why are higher-order array methods preferred over traditional loops?
+They are easier to read, easier to write, and reduce errors.
+
+How is an object stored in memory compared to a primitive value?
+Primitive values store the actual data, but objects store a reference to the data.
+
+What is the difference between iterating an object using for...in and Object.keys()?
+for...in loops through all properties, while Object.keys() loops through only the object’s own properties.
+
+What is the difference between parameters and arguments, and how do callbacks fit into this?
+Parameters are names in a function, arguments are the values passed, and callbacks are functions passed to another function.
+
+Why does asynchronous JavaScript not block the main thread, and how does this help the UI?
+Async JavaScript runs slow tasks in the background so the screen does not freeze.
+
+What is the role of the V8 engine in executing JavaScript and supporting React applications?
+V8 runs JavaScript fast and helps React apps work smoothly.
